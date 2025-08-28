@@ -14,6 +14,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import UnihanTest.R;
+
 public class MainActivity extends AppCompatActivity {
 
     private int numValid = 0, numMax = 0;
@@ -34,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void testUnicode() throws IOException, InterruptedException {
-        InputStreamReader inputReader = new InputStreamReader(getResources().getAssets().open("Unihan.txt"));
+        InputStreamReader inputReader = new InputStreamReader(getResources().getAssets().open("Unihan_IRGSources.txt"));
         BufferedReader bufReader = new BufferedReader(inputReader);
         String line;
         while ((line = bufReader.readLine()) != null) {
-            if (line.startsWith("#") || line.equals("")) {
+            if (line.startsWith("#") || line.isEmpty()) {
                 continue;
             }
             String finalLine = line;
