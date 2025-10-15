@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         new Thread(() -> {
             try {
                 testUnicode();
-
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
